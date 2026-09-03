@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message Cliente {
+    int32 id = 1;
+    string nombre = 2;
+    string mail = 3;
+    string telefono = 4;
+    int32 tipo_id = 5;
+    int32 genero_id = 6;
+}
+
+message ClienteRequest {
+    int32 id = 1;
+}
+
+service ClienteService {
+    rpc ObtenerCliente(ClienteRequest) returns (Cliente);
+}
